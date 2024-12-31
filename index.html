@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Carattere&family=Chango&family=Irish+Grover&family=Rakkas&display=swap" rel="stylesheet">
+    <title>2024 con vos</title>
+</head>
+<body>
+    <button id="play-btn">
+        <i class="fa fa-play-circle-o"></i>
+    </button>
+    <section id="portada">
+        <h1>¡Feliz año nuevo, mi amor!</h1>
+        <img id="beso-icono" src="kiss.png">
+        <a href="#carta"><i class="fa fa-arrow-down" id="flecha-abajo"></i></a>
+    </section>
+    <section id="carta">
+        <div id="texto-carta">
+            <img id="carta-icono" src="love-letter.png">
+            <h2>Mi amor,</h2>
+            <p>espero que hayas pasado una hermosa noche con tu familia. Amaría estar al lado tuyo en este momento, abrazándote y dándote muchos besitos. Quería recordarte que termina otro año lleno de amor y buenos momentos, igual que desde que te conozco. No puedo ni contar todas las citas, lindos momentos y cosas lindas que vivimos. Tampoco puedo contar las veces que lloramos, nos estresamos y un poquito nos enojamos (aunque fueron menos). Yo solo quiero quedarme con que aprendimos muchas cosas, crecimos juntos, en la vida y en Dios. Además falta un año menos para cumplir mi sueño de casarme con vos para toda mi vida. Espero que este año 2025 vivamos muchas más cosas, buenas, malas, graciosas, tristes, pero siempre junto. Quiero agarrar tu mano bien fuerte, y que empecemos el año con todas las cosas que Dios tiene preparadas para nosotros.</p>
+        </div>
+    </section>
+    <section id="galeria">
+        <h2>Y ahora, algunas fotitos de este año...</h2>
+        <div class="gallery">
+            <!-- Generación dinámica de imágenes -->
+            <div class="gallery-item" onclick="openLightbox('Img1.jpg')">
+              <img src="Img1.jpg" alt="Image 1">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img2.jpg')">
+              <img src="Img2.jpg" alt="Image 2">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img3.jpg')">
+              <img src="Img3.jpg" alt="Image 3">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img4.jpg')">
+              <img src="Img4.jpg" alt="Image 4">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img5.jpg')">
+              <img src="Img5.jpg" alt="Image 5">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img6.jpg')">
+              <img src="Img6.jpg" alt="Image 6">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img7.jpg')">
+              <img src="Img7.jpg" alt="Image 7">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img8.jpg')">
+              <img src="Img8.jpg" alt="Image 8">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img9.jpg')">
+              <img src="Img9.jpg" alt="Image 9">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img10.jpg')">
+              <img src="Img10.jpg" alt="Image 10">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img11.jpg')">
+              <img src="Img11.jpg" alt="Image 11">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img12.jpg')">
+              <img src="Img12.jpg" alt="Image 12">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img13.jpg')">
+              <img src="Img13.jpg" alt="Image 13">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img14.jpg')">
+              <img src="Img14.jpg" alt="Image 14">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img15.jpg')">
+              <img src="Img15.jpg" alt="Image 15">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img16.jpg')">
+              <img src="Img16.jpg" alt="Image 16">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img17.jpg')">
+              <img src="Img17.jpg" alt="Image 17">
+            </div>
+            <div class="gallery-item" onclick="openLightbox('Img18.jpg')">
+              <img src="Img18.png" alt="Image 18">
+            </div>
+          </div>
+        
+          <!-- Lightbox -->
+          <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+            <div class="lightbox-content" onclick="event.stopPropagation()">
+              <img id="lightbox-image" src="" alt="Expanded Image">
+              <button class="close-btn" onclick="closeLightbox()">
+                <i class="fa fa-close"></i>
+              </button>
+            </div>
+          </div>
+    </section>
+    <section id="">
+
+    </section>
+    <script>
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImage = document.getElementById('lightbox-image');
+      
+            lightboxImage.src = imageSrc;
+            lightbox.style.display = 'flex'; // Muestra el lightbox
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none'; // Oculta el lightbox
+        }
+
+        const cancion = new Audio();
+        const playBtn = document.getElementById("play-btn");
+        playBtn.addEventListener("click", () => {
+            if(playBtn.classList.contains("fa-play-circle-o")){
+                playBtn.classList.toggle("fa-play-circle-o");
+                playBtn.classList.toggle("fa-pause-circle-o");
+                cancion.src = "Die-with-a-smile.mp3";
+                cancion.currentTime = 0;
+                cancion.play();
+            }
+            else if(playBtn.classList.contains("fa-pause-circle-o")){
+                playBtn.classList.toggle("fa-play-circle-o");
+                playBtn.classList.toggle("fa-pause-circle-o");
+                cancion.pause();
+            }
+        })
+    </script>
+</body>
+</html>
